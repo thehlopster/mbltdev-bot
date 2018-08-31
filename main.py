@@ -9,15 +9,19 @@ if __name__ == "__main__":
         mail = generat.get_mail()
         name = generat.get_nick()
         specialty = generat.get_spec()
-        web_driver = driver()
+        web_driver = driver(r"C:\driver\geckodriver.exe")
+        exception = False
         web_driver.register(name, specialty, mail)
         for i in range(5):
-            web_driver.submit(i)
+            if web_driver.submit(i) == False:
+                exception = True
+                break
         time.sleep(3)
         web_driver.close()
-        acc = open("account.txt", 'a')
-        acc.write("email:{0}, name:{1}, spec:{2}\n".format(
-            mail, name, specialty))
-        acc.close()
+        if exception != False:
+            acc = open("account.txt", 'a')
+            acc.write("email:{0}, name:{1}, spec:{2}\n".format(
+                mail, name, specialty))
+            acc.close()
         print("cooldown 10")
         time.sleep(10)

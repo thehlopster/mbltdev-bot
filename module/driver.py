@@ -10,10 +10,10 @@ class driver:
              "d13bbbd92b83ddaad994a12bd9d20dfba5fff139", "http://q1.mbltdev.ru/q.webp", "0")
     url_start = "https://mbltdev.ru/ru/quiz"
 
-    def __init__(self):
+    def __init__(self,path):
         print("init driver.", end="")
         self.driver = webdriver.Firefox(
-            executable_path=r'C:\driver\geckodriver.exe')
+            executable_path=path)
         print("..ok")
         print("start driver.", end="")
         self.driver.get(self.url_start)
@@ -43,10 +43,10 @@ class driver:
             print("submit {}".format(num))
         except selenium.common.exceptions.NoSuchElementException:
             print("eror: NoSuchElementException")
-            pass
+            return False
         except selenium.common.exceptions.StaleElementReferenceException:
             print("eror: StaleElementReferenceException")
-            pass
+            return False
 
     def close(self):
         self.driver.close()
