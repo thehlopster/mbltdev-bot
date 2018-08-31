@@ -14,5 +14,6 @@ mbltdev bot - бот для автомизации ответов на [mbltdev]
 
     заменить 
     ```python
-    driver(r"C:\driver\geckodriver.exe")```
+    driver(r"C:\driver\geckodriver.exe")
+    ```
     в main.py на свой путь
