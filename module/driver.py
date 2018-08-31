@@ -10,7 +10,7 @@ class driver:
              "d13bbbd92b83ddaad994a12bd9d20dfba5fff139", "http://q1.mbltdev.ru/q.webp", "0")
     url_start = "https://mbltdev.ru/ru/quiz"
 
-    def __init__(self,path):
+    def __init__(self, path):
         print("init driver.", end="")
         self.driver = webdriver.Firefox(
             executable_path=path)
@@ -33,14 +33,14 @@ class driver:
 
     def submit(self, num):
         freez = rand.randint(1+num, 5+num)
-        print("start {0} question, holding: {1}".format(num + 1, freez)) 
+        print("start {0} question, holding: {1}".format(num + 1, freez))
         driver = self.driver
         time.sleep(3)
         try:
             inputs = driver.find_element_by_name("answer")
             time.sleep(freez)
             inputs.send_keys(self.otvet[num], Keys.ENTER)
-            print("submit {}".format(num))
+            print("submit {}".format(num + 1))
         except selenium.common.exceptions.NoSuchElementException:
             print("eror: NoSuchElementException")
             return False
