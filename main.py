@@ -18,10 +18,9 @@ if __name__ == "__main__":
                 break
         time.sleep(3)
         web_driver.close()
-        if exception != False:
+        if exception == False:
             acc = open("account.txt", 'a')
-            acc.write("email:{0}, name:{1}, spec:{2}\n".format(
-                mail, name, specialty))
+            acc.write("email:{0}, name:{1}, spec:{2}\n".format(mail, name, specialty))
             acc.close()
         print("cooldown 10")
         time.sleep(10)
