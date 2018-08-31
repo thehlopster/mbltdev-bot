@@ -35,11 +35,7 @@ class driver:
         freez = rand.randint(1+num, 5+num)
         print("start {0} question, holding: {1}".format(num + 1, freez)) 
         driver = self.driver
-        time.sleep(1)
-        inputs = driver.find_element_by_name("answer")
-        time.sleep(freez)
-        inputs.send_keys(self.otvet[num], Keys.ENTER)
-        print("submit {}".format(num + 1))
+        time.sleep(3)
         try:
             inputs = driver.find_element_by_name("answer")
             time.sleep(freez)
