@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+import selenium.common.exceptions
 import time
 import random as rand
 
