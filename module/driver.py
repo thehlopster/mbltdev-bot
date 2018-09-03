@@ -21,12 +21,12 @@ class driver:
 
     def register(self, username, spec, email):
         driver = self.driver
-        username_e = driver.find_element_by_id("id_name")
-        username_e.send_keys(username)
-        username_e = driver.find_element_by_id("id_position")
-        username_e.send_keys(spec)
-        username_e = driver.find_element_by_id("id_email")
-        username_e.send_keys(email, Keys.ENTER)
+        reg = driver.find_element_by_id("id_name")
+        reg.send_keys(username)
+        reg = driver.find_element_by_id("id_position")
+        reg.send_keys(spec)
+        reg = driver.find_element_by_id("id_email")
+        reg.send_keys(email, Keys.ENTER)
         print("all done")
         print(u"\n{0}:{1}:{2}".format(username, spec, email))
         time.sleep(2)
